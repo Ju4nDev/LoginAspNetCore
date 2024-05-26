@@ -1,4 +1,9 @@
+using LoginAspNetCore.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDbSettings"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
